@@ -47,11 +47,11 @@ jobs:
             libhidapi-dev
 
           cd /tmp
-          git clone https://gitea.osmocom.org/sdr/rtl-sdr.git
+          git clone https://github.com/Mr-Precise/rtl-sdr
           cd rtl-sdr
           mkdir build
           cd build
-          cmake -DCMAKE_INSTALL_PREFIX=/usr -DDETACH_KERNEL_DRIVER=ON ..
+          cmake -DCMAKE_INSTALL_PREFIX=/usr -DDETACH_KERNEL_DRIVER=ON -DENABLE_ZEROCOPY=ON ..
           make -j4
           make install
           ldconfig
