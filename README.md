@@ -2,6 +2,7 @@ Gqrx
 ====
 
 ### Fork info:
+Bugs and problems from this fork should be reported [here](https://github.com/Mr-Precise/gqrx-exp/issues), not to the original author.
 - More custom builds:  
 Ubuntu/Debian/Arch/Manjaro AppImages
 
