@@ -1,8 +1,21 @@
 Gqrx
 ====
 
-[![CI](https://github.com/gqrx-sdr/gqrx/workflows/CI/badge.svg)](https://github.com/gqrx-sdr/gqrx/actions?query=workflow%3ACI+branch%3Amaster)
-[![Build](https://github.com/gqrx-sdr/gqrx/workflows/Build/badge.svg)](https://github.com/gqrx-sdr/gqrx/actions?query=workflow%3ABuild+branch%3Amaster)
+### Fork info:
+Bugs and problems from this fork should be reported [here](https://github.com/Mr-Precise/gqrx-exp/issues), not to the original author.
+- More custom builds:  
+Ubuntu/Debian/Arch/Manjaro AppImages
+
+- Built with modified [Mr-Precise/rtl-sdr](https://github.com/Mr-Precise/rtl-sdr) library:  
+Allows you to receive lower than 7 MHz without hardware modifications
+
+- Windows support:  
+Builds (cross-compiling) in custom MinGW/llvm toolchain  
+
+### TODO:
+- Automate the builds, since building gnuradio in MinGW is too difficult
+- Build an ideal cross-toolchain with Gnuradio, SoapySDR, Volk, Qt, etc
+- Try to statically compile most components
 
 Gqrx is an open source software defined radio (SDR) receiver implemented using
 [GNU Radio](https://gnuradio.org) and the [Qt GUI toolkit](https://www.qt.io/).
