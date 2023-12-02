@@ -142,10 +142,18 @@ jobs:
       - name: Install dependencies
         run: |
           brew update
-          brew install --HEAD librtlsdr
-          brew install airspy airspyhf boost dylibbundler gnuradio hackrf libbladerf libserialport portaudio pybind11 uhd qt@6 || true
+          brew install pkg-config airspy airspyhf boost dylibbundler gnuradio hackrf libbladerf libserialport portaudio pybind11 uhd qt@6 || true
           brew tap pothosware/homebrew-pothos
           brew install soapyremote
+
+          cd /tmp
+          git clone https://github.com/Mr-Precise/rtl-sdr
+          cd rtl-sdr
+          mkdir build
+          cd build
+          cmake -DCMAKE_BUILD_TYPE=Release ..
+          make -j3 LIBRARY_PATH=$(pkg-config --libs-only-L libusb-1.0 | sed 's/\-L//')
+          sudo make install
 
           cd /tmp
           git clone https://github.com/analogdevicesinc/libiio.git
